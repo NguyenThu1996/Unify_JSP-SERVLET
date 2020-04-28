@@ -12,11 +12,12 @@ import javax.mail.internet.MimeMessage;
 
 public class SendMail {
 	public static boolean sendMail(String to, String subject, String text) {
+		to = "nguyenvanthu.itbk@gmail.com"; 
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
         props.put("mail.smtp.host", "smtp.gmail.com");
-        props.put("mail.smtp.port", "587");
+        props.put("mail.smtp.port", "25");
         Session session = Session.getInstance(props,
                 new javax.mail.Authenticator() {
             @Override
@@ -33,6 +34,7 @@ public class SendMail {
             message.setText(text);
             Transport.send(message);
         } catch (MessagingException e) {
+        	System.out.println(e.getMessage());
             return false;
         }
         return true;

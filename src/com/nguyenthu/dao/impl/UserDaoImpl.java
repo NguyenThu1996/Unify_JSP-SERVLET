@@ -37,6 +37,7 @@ public class UserDaoImpl extends JDBCConnection implements UserDao {
 			ps.setInt(5, roleId);
 			ps.executeUpdate();
 		} catch (SQLException e) {
+			System.out.println(e.getMessage());
 			return false;
 		}
 		return true;

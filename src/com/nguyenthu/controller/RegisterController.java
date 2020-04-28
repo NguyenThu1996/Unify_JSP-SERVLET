@@ -39,25 +39,32 @@ public class RegisterController extends HttpServlet {
 		}
 		req.getRequestDispatcher(Constant.Path.REGISTER).forward(req, resp);
 	}
+
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String username = req.getParameter("username");
 		String password = req.getParameter("password");
 		String email = req.getParameter("email");
-		String comfirmPassword ;
+		String comfirmPassword = req.getParameter("passwordConfirm");
 
 		UserService service = new UserServiceImpl();
 		String alertMsg = "";
-
+        if(!password.equals(comfirmPassword))
+        {
+        	alertMsg = "Comfirm Password not correct";
+			req.setAttribute("alert1", alertMsg);
+			req.getRequestDispatcher(Constant.Path.REGISTER).forward(req, resp);
+			return;
+        }
 		if (service.checkExistEmail(email)) {
 			alertMsg = "Email already exist!";
-			req.setAttribute("alert", alertMsg);
+			req.setAttribute("alert2", alertMsg);
 			req.getRequestDispatcher(Constant.Path.REGISTER).forward(req, resp);
 			return;
 		}
 		if (service.checkExistUsername(username)) {
 			alertMsg = "Username already exist!";
-			req.setAttribute("alert", alertMsg);
+			req.setAttribute("alert3", alertMsg);
 			req.getRequestDispatcher(Constant.Path.REGISTER).forward(req, resp);
 			return;
 		}
@@ -65,11 +72,14 @@ public class RegisterController extends HttpServlet {
 		boolean isSuccess = service.register(username, password, email);
 
 		if (isSuccess) {
-			/*
-			 * SendMail sm= new SendMail(); String subject ="UNIFY"; String body =
-			 * "Welcome to UNIFY. Please Login to use service. Thanks !"; sm.sendMail(email,
-			 * subject,body); req.setAttribute("alert", alertMsg);
-			 */
+
+			SendMail sm = new SendMail();
+			String subject = "UNIFY";
+			String body = "Welcome to UNIFY. Please Login to use service. Thanks !";
+			String Email = "";
+			sm.sendMail(Email, subject, body);
+			req.setAttribute("alert", alertMsg);
+
 			resp.sendRedirect(req.getContextPath() + "/login");
 		} else {
 			alertMsg = "Sorry System Error!";

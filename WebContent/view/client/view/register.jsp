@@ -138,17 +138,20 @@
 								<section>
 									<label class="input"> <input type="text"
 										name="username" placeholder="Username" class="form-control">
+										<span style = "color : red"> ${alert3}</span>
 									</label>
 								</section>
 								<section>
 									<label class="input"> <input type="email" name="email"
 										placeholder="Email address" class="form-control">
+										<span style = "color : red"> ${alert2}</span>
 									</label>
 								</section>
 								<section>
 									<label class="input"> <input type="password"
 										name="password" placeholder="Password" id="password"
 										class="form-control">
+										
 									</label>
 								</section>
 								<section>
