@@ -70,7 +70,7 @@ public class MyAccountController extends HttpServlet {
 					}
 				}
 			}
-
+ //áddddddddddddddddddddddddddddddddddddddddddddd
 			userService.edit(user);
 			User u = userService.get(Integer.parseInt(id));
 			HttpSession session = req.getSession(true);
