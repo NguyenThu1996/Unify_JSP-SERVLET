@@ -80,6 +80,7 @@ public class MyAccountController extends HttpServlet {
 		} catch (FileUploadException e) {
 			e.printStackTrace();
 		} catch (Exception e) {
+			System.out.println(e.getMessage());
 			resp.sendRedirect(req.getContextPath() + "/member/myaccount");
 		}
 

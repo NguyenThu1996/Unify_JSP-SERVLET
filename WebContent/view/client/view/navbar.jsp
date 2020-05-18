@@ -249,9 +249,9 @@
                                 Clothes
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="http://localhost:8080/UNIFY/product/category?cate_id=1">Men</a></li>
-                                <li><a href="http://localhost:8080/UNIFY/product/category?cate_id=2">WOMEN</a></li>
-                                <li><a href="http://localhost:8080/UNIFY/product/category?cate_id=3">CHILDREN</a></li>
+                                <li><a href="http://localhost:8080/UNIFY012/product/category?cate_id=1">Men</a></li>
+                                <li><a href="http://localhost:8080/UNIFY012/product/category?cate_id=2">WOMEN</a></li>
+                                <li><a href="http://localhost:8080/UNIFY012/product/category?cate_id=3">CHILDREN</a></li>
                             </ul>
                         </li>
                         <!-- End Clothes -->

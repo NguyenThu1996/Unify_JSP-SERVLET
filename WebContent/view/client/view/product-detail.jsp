@@ -71,8 +71,8 @@
 			<!-- Breadcrumbs v5 -->
 			<div class="container">
 				<ul class="breadcrumb-v5">
-					<li><a href="index.html"><i class="fa fa-home"></i></a></li>
-					<li><a href="#">Products</a></li>
+					<li><a href="${pageContext.request.contextPath }"><i class="fa fa-home"></i></a></li>
+					<li><a href="${pageContext.request.contextPath }/product/list">Products</a></li>
 					<li class="active">Detail</li>
 				</ul>
 			</div>

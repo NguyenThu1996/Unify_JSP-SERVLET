@@ -21,6 +21,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public void edit(User newUser) {
+		
 		User oldUser = userDao.get(newUser.getId());
 
 		oldUser.setEmail(newUser.getEmail());

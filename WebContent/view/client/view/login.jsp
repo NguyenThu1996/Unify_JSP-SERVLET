@@ -88,8 +88,8 @@
 					Maecenas <span class="shop-green">enim</span> sapien
 				</h1>
 				<ul class="breadcrumb-v4-in">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="">Product</a></li>
+					<li><a href="${pageContext.request.contextPath }">Home</a></li>
+					<li><a href="${pageContext.request.contextPath }/product/list">Product</a></li>
 					<li class="active">Log In</li>
 				</ul>
 			</div>

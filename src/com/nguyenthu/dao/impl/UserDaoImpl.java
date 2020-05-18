@@ -132,7 +132,7 @@ public class UserDaoImpl extends JDBCConnection implements UserDao {
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 		return null;
 	}
@@ -251,7 +251,7 @@ public class UserDaoImpl extends JDBCConnection implements UserDao {
 
 		try {
 			con = JDBCConnection.getJDBCConnection();
-			String sql = "Select username, password, role_id from user";
+			String sql = "Select id,username, password, role_id from user";
 			PreparedStatement ps = con.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery(sql);
 			while (rs.next()) {
@@ -262,9 +262,9 @@ public class UserDaoImpl extends JDBCConnection implements UserDao {
 					user.setRoleId(role_id);
 					user.setUsername(usernameDB);
 					user.setPassword(passwordDB);
+					user.setId(rs.getInt("id"));
 					return user;
 				}
-
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
