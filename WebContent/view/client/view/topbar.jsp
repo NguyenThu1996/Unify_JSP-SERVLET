@@ -17,13 +17,6 @@
 			<div class="col-sm-6">
 				<!-- Topbar Navigation -->
 				<ul class="left-topbar">
-					<li><a>Currency (USD)</a>
-						<ul class="currency">
-							<li class="active"><a href="#">USD <i
-									class="fa fa-check"></i></a></li>
-							<li><a href="#">Euro</a></li>
-							<li><a href="#">Pound</a></li>
-						</ul></li>
 					<li><a>Language (EN)</a>
 						<ul class="language">
 							<li class="active"><a href="#">English (EN)<i
